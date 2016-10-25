@@ -21,3 +21,16 @@ BestGearsCyl <- functon(gears, cylinders) {
 
 # Get the best mpg car for 6 cylinder cars with 4 gears
 answer <- BestGearsCyl(6, 4)
+
+
+#Fixed One
+BestGearsCyl <- function(gears, cylinders) {
+  ret <- vehicle %>%  
+    filter(gear == gears, cyl == cylinders) %>% 
+    filter(mpg== max(mpg)) %>% 
+    select(car)
+  return (ret)
+}
+
+# # Get the best mpg car for 6 cylinder cars with 4 gears
+answer <- BestGearsCyl(4, 6)
